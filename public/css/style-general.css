@@ -1,0 +1,92 @@
+body{
+    color: white;
+    font-family: Arial;
+    margin: 0;
+}
+h1{
+    color: palegoldenrod;
+    font-weight: bold;
+}
+h2{
+    color: paleturquoise;
+    font-weight: bold;
+}
+h5{
+    font-weight: bold;
+}
+ul{
+    list-style-type: none;
+}
+footer{
+    position: relative;
+    top: 630px;
+}
+a{
+    color: palegreen;
+    font-weight: bolder;
+}
+a:hover{
+    color: paleturquoise;
+    font-weight: bold;
+}
+#auteurImg{
+    width: 200px;
+}
+#carouselExampleIndicators{
+    margin: 70px auto;
+    width: 50%;
+}
+div.d-md-block{
+    background-color: rgba(0,0,0,.5);
+    margin: 30px auto;
+}
+.auteur{
+    font-weight: bold;
+}
+.img-social{
+    height: 30px;
+    width:30px;
+}
+.logo{
+    width: 300px;
+}
+.carousel-item img{
+    height: 700px;
+    width: 100%;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+#carre{
+    background:palegoldenrod;
+    height:100px;
+    width:100px;
+    position:absolute;
+    left: 20%;
+    top: 20%;
+}
+.button{
+    position: absolute;
+    width: 80px;
+}
+.up{
+    top: 500px;
+    left: 20%;
+}
+.down{
+    top: 500px;
+    left: 35%;
+}
+.left{
+    top: 500px;
+    left: 65%;
+}
+.right{
+    top: 500px;
+    left: 80%;
+}
+.rotate{
+    top: 500px;
+    left: 50%;
+}

@@ -1,15 +1,35 @@
 <?php
     namespace App\Controller;
-    use Symfony\Component\HttpFoundation\Response;
-    class index
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+    class index extends AbstractController
     {
-        public function default(): Response
+        public function aff_p1(): Response
         {
-            
-            return new Response(
-                '<html><h1>Index.php</h1>
-                <p>Bienvenue sur la page index.php</p>
-                </html>'
-            );
+            return $this->render('pages/page01.html.twig', [
+
+            ]);
+        }
+
+        public function aff_p2(): Response
+        {
+            return $this->render('pages/page02.html.twig', [
+
+            ]);
+        }
+
+        public function aff_p3(): Response
+        {
+            return $this->render('pages/page03.html.twig', [
+
+            ]);
+        }
+
+        public function aff_p4(): Response
+        {
+            return $this->render('pages/page04.html.twig', [
+
+            ]);
         }
     }

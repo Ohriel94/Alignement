@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<header class="header">
+    <h1>TRAVAIL SYNTHESE</h1>
+    <h3>Introduction a la programmation web</h3>
+</header>
+
+<nav class="navbar">
+    <a href="/page02">Carousel</a>
+    <a href="/page03">Calculatrice</a>
+    <a href="/page04">Curriculum Vitae</a>
+</nav>
+
+<main class="row">
+    <aside class="side">
+        <h2>A propos de moi</h2>
+        <img class="auteurImg" src="{{ asset('images/brendan.jpg') }}">
+        <p>Je suis <span class="auteur">Brendan Dibert-Bekoy</span> et cette boutique est ma prefere de la citadelle</p>
+        <h3>Plus de texte</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non sem purus. Nulla quis est in dolor porttitor
+            elementum. Nunc ut arcu luctus, fermentum nisl a, vulputate felis. Nulla molestie, tellus sit amet
+            pellentesque iaculis, massa enim mattis eros, at venenatis odio purus luctus libero. Pellentesque blandit
+            nisl mollis, pulvinar ex at, sagittis nibh. Mauris at quam pellentesque, eleifend mi.</p>
+    </aside>
+    <article class="main">
+        <section>
+            <h2>Carousel</h2>
+            <p>Un carousel contenant des pochettes d'albums et des liens vers youtube pour ecouter des extraits</p>
+            <embed type="text/html" src="/page02" class="extraitHTML">
+            <h3>Albums utilises</h3>
+            <div class="container">
+                <ul>
+                    <li>David Gilmour</li>
+                    <li>Darryl Reeves</li>
+                    <li>Esperanza Spalding</li>
+                    <li>Meshell Ndegeoceollo</li>
+                    <li>The Floacist</li>
+                    <li>Kamasi Washington</li>
+                    <li>Thundercat</li>
+                    <li>Kandace Springs</li>
+                    <li>Minnie Riperton</li>
+                    <li>Roy Hargrove</li>
+                </ul>
+            </div>
+        </section>
+        <br>
+        <section>
+            <h2>Calculatrice</h2>
+            <p>Title description, Sep 2, 2017</p>
+            <embed type="text/html" src="/page03" class="extraitHTML">
+            <h3>Some text..</h3>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco.</p>
+        </section>
+        <br>
+        <section>
+            <h2>Curiculum Vitae</h2>
+            <p>Un CV basique</p>
+            <embed type="text/html" src="/page04" class="extraitHTML">
+        </section>
+    </article>
+</main>
+{% endblock %}
