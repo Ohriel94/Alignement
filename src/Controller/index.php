@@ -32,4 +32,11 @@ use Symfony\Component\HttpFoundation\Response;
 
             ]);
         }
+
+        public function aff_p5(): Response
+        {
+            return $this->render('pages/page05.html.twig', [
+
+            ]);
+        }
     }

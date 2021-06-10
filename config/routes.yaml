@@ -17,3 +17,7 @@ page03:
 page04:
    path: /page04
    controller: App\Controller\index::aff_p4
+
+page05:
+   path: /page05
+   controller: App\Controller\index::aff_p5

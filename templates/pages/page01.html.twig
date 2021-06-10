@@ -6,18 +6,21 @@
 
 {% block title %}TS-01 (twig){% endblock %}
 
-{% block body %}
+{% block header %}
 <header class="header">
     <h1>TRAVAIL SYNTHESE</h1>
     <h3>Introduction a la programmation web</h3>
 </header>
+{% endblock %}
 
+{% block navbar %}
 <nav class="navbar">
     <a href="/page02">Carousel</a>
     <a href="/page03">Calculatrice</a>
     <a href="/page04">Curriculum Vitae</a>
 </nav>
-
+{% endblock %}
+{% block body %}
 <main class="row">
     <aside class="side">
         <h2>A propos de moi</h2>

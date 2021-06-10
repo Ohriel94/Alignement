@@ -30,7 +30,7 @@ ul{
 }
 .navbar {
     display: flex;
-    background-color: seagreen;
+    background-color: rgba(32,178,170,.6);
 }
 .navbar a {
     color: palegreen;
