@@ -3,6 +3,7 @@
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Cookie;
     class index extends AbstractController
     {
         public function aff_p1(): Response
@@ -35,8 +36,14 @@ use Symfony\Component\HttpFoundation\Response;
 
         public function aff_p5(): Response
         {
+            $response = new Response(
+                'Content',
+                Response::HTTP_OK,
+                ['content-type' => 'text/html']);
+            $response->headers->setCookie(Cookie::create('foo', 'bar'));
             return $this->render('pages/page05.html.twig', [
 
             ]);
         }
+        
     }
