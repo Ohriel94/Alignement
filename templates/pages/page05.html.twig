@@ -11,12 +11,21 @@
 {% endblock %}
 {% block body %}
 <body>
-    <div class="container">
-        <div class="view">
-            <iframe width="1080" height="720" id="iframe"  src="{{ asset('http://10.0.0.108/video/videoPlayer.html') }}"></iframe>
+    <div class="grid-container">
+        <div class="grid-item" id="vlc-panel">
+            <iframe width="1080" height="720" id="iframe" 
+                {# src="{{ asset('http://10.0.0.101/video/videoPlayer.html') }}"  #}
+                src="{{ asset('https://images.unsplash.com/photo-1480796927426-f609979314bd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') }}" 
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
         </div>
-        <div class="controls">
+        <div class="col-sm" id="control-panel">
+            <button onclick="Coulisser()">Left</button>
+            <button onclick="Coulisser()">Right</button>
+            <button onclick="Orienter()">RotateL</button>
+            <button onclick="Orienter()">RotateR</button>
         </div>
+        <canvas id="canvas" width="1080" height="720"></canvas>
     </div>
 </body>
 {% endblock %}

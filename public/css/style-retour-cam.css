@@ -5,6 +5,33 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
-    
-.view { grid-area: 1 / 1 / 6 / 4; }
-.controls { grid-area: 1 / 4 / 6 / 6; }
+
+header {
+    background-color: #212C64;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+#iframe {
+    width: 1000px;
+    height: fit-content;
+    position: absolute;
+}
+
+#vlc-panel { 
+    top: 0px;
+}
+#control-panel {
+    position: absolute;
+    right: -400px; 
+}
+
+#canvas {
+    border:0.3em solid #AB1D37;
+}
+
+.grid-container {
+    display: block;
+}

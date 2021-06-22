@@ -60,18 +60,25 @@
     
     {% endblock %}
     </body>
-    <footer class="footer">
-        <p class="text-center">
-            <a href="https://www.cegepthetford.ca/">
-                <img class="logo" src="{{ asset('/images/LCTM.png') }}" alt="logoCTM"/>
-            </a><br>
-            <a href="https://www.cegepthetford.ca/programmes/programmes-techniques/techniques-de-linformatique/">
-                Département des techniques de l'informatique - Cégep de Thetford Mines
-            </a>
-            <br/>
-        </p>
-        <h4 class="text-center">&copy; 2020</h4>
-    </footer>
+{% block footer %}
+<footer class="bg-info">
+    <hr/>
+    <p class="text-center">
+        <a href="https://www.cegepthetford.ca/">
+            <img class="logo" src="../images/LCTM.png" alt="logoCTM"/>
+        </a><br>
+        <a href="https://www.cegepthetford.ca/programmes/programmes-techniques/techniques-de-linformatique/"
+           class="liens">
+            Département des techniques de l'informatique - Cégep de Thetford Mines
+        </a>
+        <br/>
+    </p>
+    <h3 class="text-center">
+        &copy; 2020
+    </h3>
+    <hr/>
+</footer>
+{% endblock %}
     {% block javascripts %}
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
