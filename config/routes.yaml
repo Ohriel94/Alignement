@@ -2,22 +2,6 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-page01:
-   path: /
-   controller: App\Controller\index::aff_p1
-
-page02:
-   path: /page02
-   controller: App\Controller\index::aff_p2
-
-page03:
-   path: /page03
-   controller: App\Controller\index::aff_p3
-
-page04:
-   path: /page04
-   controller: App\Controller\index::aff_p4
-
 page05:
    path: /page05
    controller: App\Controller\index::aff_p5
