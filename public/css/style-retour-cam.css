@@ -1,0 +1,36 @@
+header {
+    background-color: #212C64;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+.container {
+    position: relative;
+}
+
+#iframe {
+    width: 1080px;
+    height: 720px;
+    position: absolute;
+    z-index: -2;
+}
+
+#canvas-couche-1 {
+    z-index: -1;
+    position: absolute;
+}
+
+#vlc-panel { 
+    position: relative;
+}
+
+#control-panel {
+    position: absolute;
+    right: -250px; 
+}
+
+#canvas {
+    border: 0.3em solid #AB1D37;
+}

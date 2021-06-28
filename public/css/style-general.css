@@ -1,0 +1,41 @@
+body{
+    color: white;
+    font-family: Arial;
+    margin: 0;
+}
+h1{
+    color: #b3112c;
+    font-weight: bold;
+}
+h2{
+    color: #0D237D;
+    font-weight: bold;
+}
+h5{
+    font-weight: bold;
+}
+ul{
+    list-style-type: none;
+}
+footer{
+    position: relative;
+    top: 630px;
+}
+a{
+    color: #0D237D;
+    font-weight: bolder;
+}
+a:hover{
+    color: paleturquoise;
+    font-weight: bold;
+}
+div.d-md-block{
+    background-color: rgba(0,0,0,.5);
+    margin: 30px auto;
+}
+.logo{
+    width: 300px;
+}
+.jumbotron{
+    background-color: #0D237D;
+}
