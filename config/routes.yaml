@@ -3,5 +3,5 @@
 #    controller: App\Controller\DefaultController::index
 
 page05:
-   path: /page05
+   path: /
    controller: App\Controller\index::aff_p5
