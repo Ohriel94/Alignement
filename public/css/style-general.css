@@ -3,8 +3,11 @@ body{
     font-family: Arial;
     margin: 0;
 }
+.jumbotron{
+    background-color: #b3112c;
+}
 h1{
-    color: #b3112c;
+    color: #FFFFFF;
     font-weight: bold;
 }
 h2{
@@ -12,21 +15,24 @@ h2{
     font-weight: bold;
 }
 h5{
+    color: #111111;
+    font-weight: bold;
     font-weight: bold;
 }
 ul{
     list-style-type: none;
 }
 footer{
-    position: relative;
-    top: 630px;
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
 }
 a{
     color: #0D237D;
     font-weight: bolder;
 }
 a:hover{
-    color: paleturquoise;
+    color: #b3112c;
     font-weight: bold;
 }
 div.d-md-block{
@@ -34,8 +40,5 @@ div.d-md-block{
     margin: 30px auto;
 }
 .logo{
-    width: 300px;
-}
-.jumbotron{
-    background-color: #0D237D;
+    width: 400px;
 }
