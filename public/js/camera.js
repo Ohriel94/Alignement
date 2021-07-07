@@ -27,10 +27,10 @@ alpha.oninput = function() {
 }
 step.oninput = function() {
     valueStep.innerHTML = this.value
-    drawGrid(width,height,linesColour,thickness,alpha,step);
+    drawGrid(linesColour,thickness,alpha,step);
 }
 
-function drawGrid(width,height,linesColour,thickness,alpha,step) {
+function drawGrid(linesColour,thickness,alpha,step) {
     for (let i = 0; i < width / 31; i++) {
         ctx.beginPath();
         ctx.lineCap = "round";

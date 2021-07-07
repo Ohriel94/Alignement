@@ -3,8 +3,11 @@ body{
     font-family: Arial;
     margin: 0;
 }
-.jumbotron{
+header {
     background-color: #b3112c;
+}
+body {
+    background-color: #FFFFFF;
 }
 h1{
     color: #FFFFFF;
@@ -62,12 +65,10 @@ div.d-md-block{
     flex-wrap: wrap;
 }
 .main {
-    flex: 70%;
-    background-color: #FFF;
-    padding: 20px;
+    flex: 1 1 auto;
+    background-color: #CCC;
 }
 .side {
-    flex: 30%;
+    flex: 40%;
     background-color: #AAA;
-    padding: 20px;
 }
