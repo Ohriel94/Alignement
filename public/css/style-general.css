@@ -14,6 +14,10 @@ h2{
     color: #0D237D;
     font-weight: bold;
 }
+h3{
+    color: #b3112c;
+    font-weight: bold;
+}
 h5{
     color: #111111;
     font-weight: bold;
@@ -23,9 +27,20 @@ ul{
     list-style-type: none;
 }
 footer{
-    position: absolute;
-    bottom: 30px;
-    right: 50%;
+    position: relative;
+    top: 650px;
+    display: block
+}
+input {
+    display: block;
+}
+label {
+    font-weight: bold;
+    color: goldenrod;
+}
+span {
+    font-weight: bold;
+    color: #0D237D;
 }
 a{
     color: #0D237D;
@@ -41,4 +56,18 @@ div.d-md-block{
 }
 .logo{
     width: 400px;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.main {
+    flex: 70%;
+    background-color: #FFF;
+    padding: 20px;
+}
+.side {
+    flex: 30%;
+    background-color: #AAA;
+    padding: 20px;
 }
