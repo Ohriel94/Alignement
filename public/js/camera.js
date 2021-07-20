@@ -1,60 +1,35 @@
-const x = 0;
-const y = 0;
-const height = 720;
-const width = 1080;
-const linesColour = "rgba(255,176,72," + alpha.value / 10 + ")";
-
-var thickness = document.getElementById("thickness");
-var alpha = document.getElementById("alpha");
-var step = document.getElementById("step");
-var valueThick = document.getElementById("valueThick");
-var valueAlpha = document.getElementById("valueAlpha");
-var valueStep = document.getElementById("valueStep");
+var largeur = document.getElementById("iframe").width;
+var hauteur = document.getElementById("iframe").height;
+var epaisseur = 5;
+var alpha = 1;
+var densite = 30;
+var lignesCouleur = "rgba(255,176,72," + alpha + ")";
 var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
+var contexte = canvas.getContext("2d");
 
-ctx.globalCompositeOperation = "destination-atop";
-ctx.fillStyle = "rgba(255,255,255,0.10)";
-ctx.fillRect(0, 0, width, height);
+contexte.fillStyle = "rgba(120,120,120,0.10)";
+contexte.fillRect(0, 0, largeur, hauteur);
 
-thickness.oninput = function() {
-    valueThick.innerHTML = this.value
-    drawGrid(width,height,linesColour,thickness,alpha,step);
+//Dessiner les lignes verticales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
+//de lignes choisit
+for (i = 1; i < largeur / (hauteur / largeur) / densite; i++) {
+    contexte.beginPath();
+    contexte.lineCap = "flat";
+    contexte.strokeStyle = lignesCouleur;
+    contexte.moveTo(0 + ((largeur / densite) * i), largeur / hauteur);
+    contexte.lineTo(0 + ((largeur / densite) * i), hauteur);
+    contexte.lineWidth = epaisseur;
+    contexte.stroke();
 }
-alpha.oninput = function() {
-    valueAlpha.innerHTML = this.value / 10;
-    drawGrid(width,height,linesColour,thickness,alpha,step);
+//Dessiner les lignes horizontales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
+//de lignes choisit
+for (i = 1; i < hauteur / (largeur / hauteur) / densite; i++) {
+    contexte.beginPath();
+    contexte.lineCap = "flat";
+    contexte.strokeStyle = lignesCouleur;
+    contexte.moveTo(hauteur / largeur, 0 + ((largeur / densite) * i));
+    contexte.lineTo(largeur, 0 + ((largeur / densite) * i));
+    contexte.lineWidth = epaisseur;
+    contexte.stroke();
 }
-step.oninput = function() {
-    valueStep.innerHTML = this.value
-    drawGrid(linesColour,thickness,alpha,step);
-}
-
-function drawGrid(linesColour,thickness,alpha,step) {
-    for (let i = 0; i < width / 31; i++) {
-        ctx.beginPath();
-        ctx.lineCap = "round";
-        ctx.strokeStyle = linesColour;
-        ctx.moveTo(x + step * i, 0);
-        ctx.lineTo(y + step * i, height);
-        ctx.lineWidth = thickness.value;
-        ctx.stroke();
-    }
-    
-    for (let i = 0; i < height / 32; i++) {
-        ctx.beginPath();
-        ctx.lineCap = "round";
-        ctx.strokeStyle = linesColour;
-        ctx.moveTo(0, y + step.value * i);
-        ctx.lineTo(width, y + step.value * i);
-        ctx.lineWidth = thickness.value;
-        ctx.stroke();
-    }
-}
-
-function clear() {
-    var canvasTemp = canvas;
-    var ctxTemp = canvasTemp.getContext("2d");
-    ctxTemp.clearRect(0, 0, width, height);
-
-}
+contexte.globalCompositeOperation = "destination-atop";

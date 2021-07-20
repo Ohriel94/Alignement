@@ -1,74 +1,132 @@
-body{
+body {
     color: white;
     font-family: Arial;
     margin: 0;
 }
+
 header {
     background-color: #b3112c;
 }
+
 body {
     background-color: #FFFFFF;
 }
-h1{
+
+h1 {
     color: #FFFFFF;
     font-weight: bold;
 }
-h2{
+
+h2 {
     color: #0D237D;
     font-weight: bold;
 }
-h3{
+
+h3 {
     color: #b3112c;
     font-weight: bold;
 }
-h5{
+
+h5 {
     color: #111111;
     font-weight: bold;
     font-weight: bold;
 }
-ul{
+
+ul {
     list-style-type: none;
 }
-footer{
+
+footer {
     position: relative;
     top: 650px;
     display: block
 }
+
 input {
     display: block;
 }
+
 label {
     font-weight: bold;
-    color: goldenrod;
+    color: black;
 }
+
 span {
     font-weight: bold;
     color: #0D237D;
 }
-a{
+
+a {
     color: #0D237D;
     font-weight: bolder;
 }
-a:hover{
+
+a:hover {
     color: #b3112c;
     font-weight: bold;
 }
-div.d-md-block{
-    background-color: rgba(0,0,0,.5);
+
+div.d-md-block {
+    background-color: rgba(0, 0, 0, .5);
     margin: 30px auto;
 }
-.logo{
+
+.logo {
     width: 400px;
 }
+
 .row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
+
 .main {
-    flex: 1 1 auto;
-    background-color: #CCC;
+    min-height: 2304px;
+    min-width: fit-content;
+    padding: 40px;
 }
+
 .side {
-    flex: 40%;
-    background-color: #AAA;
+    max-width: 450px;
+    min-width: fit-content;
+    text-align: center;
+    padding: 40px;
+}
+
+.canvas {
+    padding: 0px, 0px, 0px, 20px;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 1px;
+    cursor: pointer;
+    width: 150px;
+}
+.button:focus {
+    color: black;
+}
+.button:hover {
+    color: black;
+}
+#btn-rouge {
+    background-color: #b91b1b;
+}
+#btn-bleu {
+    background-color: #1f7ac4;
+}
+#btn-vert {
+    background-color: #259c29;
+}
+#btn-jaune {
+    background-color: #c79e2e;
+}
+#btn-blanc {
+    background-color: #888888;
 }

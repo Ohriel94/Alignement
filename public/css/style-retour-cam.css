@@ -1,11 +1,11 @@
 #iframe {
-    width: 1080px;
-    height: 720px;
-    /* position: absolute; */
-    z-index: -2;
+    position: relative;
+    z-index: 98;
+    border: #b3112c 5px;
 }
 
 #canvas {
-    z-index: -1;
-    /* position: absolute; */
+    position: absolute;
+    z-index: 99;
 }
+
