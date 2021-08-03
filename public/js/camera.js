@@ -1,35 +1,92 @@
-var largeur = document.getElementById("iframe").width;
-var hauteur = document.getElementById("iframe").height;
-var epaisseur = 5;
-var alpha = 1;
-var densite = 30;
-var lignesCouleur = "rgba(255,176,72," + alpha + ")";
-var canvas = document.getElementById("canvas");
-var contexte = canvas.getContext("2d");
+console.log("camera.js : start");
+console.log("--------------------------------------------------------------------------------------------");
+const canvas = document.getElementById("canvas");
+const contexte = canvas.getContext("2d");
+const thkSlider = document.getElementById("thkSlider");
+const alpSlider = document.getElementById("alpSlider");
+const denSlider = document.getElementById("denSlider");
+var couleurLignes = "";
+var unBoutonAEtePresse = false;
 
-contexte.fillStyle = "rgba(120,120,120,0.10)";
-contexte.fillRect(0, 0, largeur, hauteur);
+function DessinerCanvas() {
+    EffacerCanvas(contexte);
+    RecupererValeurs();
+    contexte.fillStyle = "rgba(120,120,120,0.10)";
+    contexte.fillRect(0, 0, canvas.width, canvas.height);
+    console.log("Un bouton a-t-il été pressé ? " + unBoutonAEtePresse);
+    if (!unBoutonAEtePresse)
+        couleurChoisit = "orange";
+    switch (couleurChoisit) {
+        case "rouge":
+            couleurLignes = "RGBA(175,27,27," + alpha + ")";
+            break;
+        case "bleu":
+            couleurLignes = "RGBA(31,80,190," + alpha + ")";
+            break;
+        case "vert":
+            couleurLignes = "RGBA(37,156,41," + alpha + ")";
+            break;
+        case "blanc":
+            couleurLignes = "RGB(255,255,255," + alpha + ")";
+            break;
+        case "orange":
+            couleurLignes = "RGBA(255,145,46," + alpha + ")";
+            break;
+    }
+    console.log("couleur choisit : " + couleurChoisit);
+    console.log("couleur renvoyé : " + couleurLignes);
+    //Dessiner les lignes verticales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
+    //de lignes choisit
+    console.log("couleur renvoyé : " + couleurLignes);
+    for (i = 1; i < Math.round((canvas.width / canvas.height) * densite); i++) {
+        contexte.beginPath();
+        contexte.lineCap = "flat";
+        contexte.strokeStyle = couleurLignes;
+        contexte.moveTo(0 + (canvas.height / densite) * i, 0);
+        contexte.lineTo(0 + (canvas.height / densite) * i, canvas.height);
+        contexte.lineWidth = epaisseur;
+        contexte.stroke();
+        console.log(i);
+    }
+    //Dessiner les lignes horizontales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
+    //de lignes choisit
+    console.log("couleur renvoyé : " + couleurLignes);
+    for (j = 1; j < Math.round((canvas.height / canvas.width) * densite); j++) {
+        contexte.beginPath();
+        contexte.lineCap = "flat";
+        contexte.strokeStyle = couleurLignes;
+        contexte.moveTo(0, 0 + (canvas.width / densite) * j);
+        contexte.lineTo(canvas.width, 0 + (canvas.width / densite) * j);
+        contexte.lineWidth = epaisseur;
+        contexte.stroke();
+        console.log(j);
+    }
+    contexte.globalCompositeOperation = "destination-atop";
+    console.log("========================================================================================");
+}
 
-//Dessiner les lignes verticales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
-//de lignes choisit
-for (i = 1; i < largeur / (hauteur / largeur) / densite; i++) {
-    contexte.beginPath();
-    contexte.lineCap = "flat";
-    contexte.strokeStyle = lignesCouleur;
-    contexte.moveTo(0 + ((largeur / densite) * i), largeur / hauteur);
-    contexte.lineTo(0 + ((largeur / densite) * i), hauteur);
-    contexte.lineWidth = epaisseur;
-    contexte.stroke();
+function ChoisirCouleur(boutonPressé) {
+    console.log(boutonPressé.value + " à été pressé")
+    couleurChoisit = boutonPressé.value;
+    unBoutonAEtePresse = true;
+    DessinerCanvas();
 }
-//Dessiner les lignes horizontales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
-//de lignes choisit
-for (i = 1; i < hauteur / (largeur / hauteur) / densite; i++) {
-    contexte.beginPath();
-    contexte.lineCap = "flat";
-    contexte.strokeStyle = lignesCouleur;
-    contexte.moveTo(hauteur / largeur, 0 + ((largeur / densite) * i));
-    contexte.lineTo(largeur, 0 + ((largeur / densite) * i));
-    contexte.lineWidth = epaisseur;
-    contexte.stroke();
+
+function RecupererValeurs() {
+    epaisseur = thkSlider.value;
+    alpha = alpSlider.value;
+    densite = denSlider.value;
 }
-contexte.globalCompositeOperation = "destination-atop";
+
+function EffacerCanvas(contexte) {
+    contexte.clearRect(0, 0, canvas.width, canvas.height);
+}
+thkSlider.onmouseup = function () {
+    DessinerCanvas();
+}
+alpSlider.onmouseup = function () {
+    DessinerCanvas();
+}
+denSlider.onmouseup = function () {
+    DessinerCanvas();
+}
