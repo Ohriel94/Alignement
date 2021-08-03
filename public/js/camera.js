@@ -11,6 +11,12 @@ const denValue = document.getElementById("denValue");
 var couleurLignes = "";
 var unBoutonAEtePresse = false;
 
+window.setInterval(
+function CamRefresh() {
+    console.log("CamRefresh()");
+    document.getElementById("iframe").src = "https://10.0.0.45/ISAPI/Streaming/Channels/1/picture?admin@F0urnier";
+}, 1000);
+
 function DessinerCanvas() {
     EffacerCanvas(contexte);
     RecupererValeurs();
@@ -43,23 +49,25 @@ function DessinerCanvas() {
     console.log("couleur renvoyé : " + couleurLignes);
     //Dessiner les lignes verticales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
     //de lignes choisit
-    console.log("couleur renvoyé : " + couleurLignes);
+    let nbLignesVerticales = Math.round((canvas.width / canvas.height) * densite);
+    let nbLignesHorizontales = Math.round((canvas.height / canvas.width) * densite);
+    console.log("Nombre de lignes verticales : " + nbLignesVerticales);
+    console.log("Nombre de lignes horizontales : " + nbLignesHorizontales);
     contexte.beginPath();
-    for (i = 1; i < Math.round((canvas.width / canvas.height) * densite); i++) {
+    for (i = 1; i < nbLignesVerticales; i++) {
         contexte.lineCap = "flat";
         contexte.strokeStyle = couleurLignes;
-        contexte.moveTo((canvas.height / densite) * i, 0);
-        contexte.lineTo((canvas.height / densite) * i, canvas.height);
+        contexte.moveTo((canvas.width / nbLignesVerticales) * i, 0);
+        contexte.lineTo((canvas.width / nbLignesVerticales) * i, canvas.height);
         contexte.lineWidth = epaisseur;
     }
     //Dessiner les lignes horizontales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
     //de lignes choisit
-    console.log("couleur renvoyé : " + couleurLignes);
-    for (j = 1; j < Math.round((canvas.height / canvas.width) * densite); j++) {
+    for (j = 1; j < nbLignesHorizontales; j++) {
         contexte.lineCap = "flat";
         contexte.strokeStyle = couleurLignes;
-        contexte.moveTo(0, (canvas.width / densite) * j);
-        contexte.lineTo(canvas.width, (canvas.width / densite) * j);
+        contexte.moveTo(0, (canvas.height / nbLignesHorizontales) * j);
+        contexte.lineTo(canvas.width, (canvas.height / nbLignesHorizontales) * j);
         contexte.lineWidth = epaisseur;
     }
     contexte.stroke();
@@ -94,10 +102,4 @@ alpSlider.onmouseup = function () {
 }
 denSlider.onmouseup = function () {
     DessinerCanvas();
-}
-
-var x = setInterval(CamRefresh(), 1000)
-function CamRefresh() {
-    console.log("CamRefresh()")
-    document.getElementById("iframe").src = "https://10.0.0.45/ISAPI/Streaming/Channels/1/picture?admin@F0urnier";
 }
