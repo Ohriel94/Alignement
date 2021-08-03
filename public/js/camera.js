@@ -44,27 +44,25 @@ function DessinerCanvas() {
     //Dessiner les lignes verticales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
     //de lignes choisit
     console.log("couleur renvoyé : " + couleurLignes);
+    contexte.beginPath();
     for (i = 1; i < Math.round((canvas.width / canvas.height) * densite); i++) {
-        contexte.beginPath();
         contexte.lineCap = "flat";
         contexte.strokeStyle = couleurLignes;
         contexte.moveTo((canvas.height / densite) * i, 0);
         contexte.lineTo((canvas.height / densite) * i, canvas.height);
         contexte.lineWidth = epaisseur;
-        contexte.stroke();
     }
     //Dessiner les lignes horizontales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
     //de lignes choisit
     console.log("couleur renvoyé : " + couleurLignes);
     for (j = 1; j < Math.round((canvas.height / canvas.width) * densite); j++) {
-        contexte.beginPath();
         contexte.lineCap = "flat";
         contexte.strokeStyle = couleurLignes;
         contexte.moveTo(0, (canvas.width / densite) * j);
         contexte.lineTo(canvas.width, (canvas.width / densite) * j);
         contexte.lineWidth = epaisseur;
-        contexte.stroke();
     }
+    contexte.stroke();
     contexte.globalCompositeOperation = "destination-atop";
     console.log("========================================================================================");
 }
@@ -78,10 +76,10 @@ function ChoisirCouleur(boutonPressé) {
 
 function RecupererValeurs() {
     epaisseur = thkSlider.value;
-    alpha = alpSlider.value;
+    alpha = alpSlider.value / 100;
     densite = denSlider.value;
     thkValue.innerHTML = epaisseur;
-    alpValue.innerHTML = alpha / 100;
+    alpValue.innerHTML = alpha;
     denValue.innerHTML = densite;
 }
 

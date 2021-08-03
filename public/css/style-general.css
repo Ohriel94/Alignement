@@ -98,7 +98,7 @@ div.d-md-block {
     padding: 0px, 0px, 0px, 20px;
 }
 
-.button {
+.boutons {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -109,10 +109,10 @@ div.d-md-block {
     cursor: pointer;
     width: 150px;
 }
-.button:focus {
+.boutons:focus {
     color: black;
 }
-.button:hover {
+.boutons:hover {
     color: black;
 }
 #btn-rouge {
