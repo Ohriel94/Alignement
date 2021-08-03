@@ -69,8 +69,8 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
         // line 3
         echo "\t<!-- Bootstrap CSS -->
 \t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">
-\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style-retour-cam.css\">
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style-general.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style-retour-cam.css\">
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -128,7 +128,7 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t\t\t\t<span id=\"denValue\">0</span>
 \t\t\t\t\t</label>
 \t\t\t\t\t<input type=\"range\" id=\"denSlider\" min=\"3\" max=\"20\" value=\"10\">
-\t\t\t\t</div></br>
+\t\t\t\t</div><br>
 \t\t\t\t<div class=\"boutons-container\">
 \t\t\t\t\t<input type=\"button\" id=\"btn-rouge\" class=\"boutons\" onclick=\"ChoisirCouleur(this)\" value=\"rouge\"><br>
 \t\t\t\t\t<input type=\"button\" id=\"btn-bleu\" class=\"boutons\" onclick=\"ChoisirCouleur(this)\" value=\"bleu\"><br>
@@ -141,7 +141,7 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t<main class=\"main\">
 \t\t\t\t<h2>View</h2>
 \t\t\t\t<canvas id=\"canvas\" width=\"2690\" height=\"1520\"></canvas>
-\t\t\t\t<iframe id=\"iframe\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\" src=\"https://10.0.0.45/ISAPI/Streaming/channels/102/picture\"></iframe>
+\t\t\t\t<iframe id=\"iframe\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
 \t\t\t</main>
 \t\t</article>
 \t</body>
@@ -175,8 +175,8 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 {% block stylesheets %}
 \t<!-- Bootstrap CSS -->
 \t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css\" integrity=\"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2\" crossorigin=\"anonymous\">
-\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style-retour-cam.css\">
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style-general.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style-retour-cam.css\">
 {% endblock %}
 {% block title %}Alignement
 {% endblock %}
@@ -198,7 +198,7 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t\t\t\t<span id=\"denValue\">0</span>
 \t\t\t\t\t</label>
 \t\t\t\t\t<input type=\"range\" id=\"denSlider\" min=\"3\" max=\"20\" value=\"10\">
-\t\t\t\t</div></br>
+\t\t\t\t</div><br>
 \t\t\t\t<div class=\"boutons-container\">
 \t\t\t\t\t<input type=\"button\" id=\"btn-rouge\" class=\"boutons\" onclick=\"ChoisirCouleur(this)\" value=\"rouge\"><br>
 \t\t\t\t\t<input type=\"button\" id=\"btn-bleu\" class=\"boutons\" onclick=\"ChoisirCouleur(this)\" value=\"bleu\"><br>
@@ -211,7 +211,7 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t<main class=\"main\">
 \t\t\t\t<h2>View</h2>
 \t\t\t\t<canvas id=\"canvas\" width=\"2690\" height=\"1520\"></canvas>
-\t\t\t\t<iframe id=\"iframe\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\" src=\"https://10.0.0.45/ISAPI/Streaming/channels/102/picture\"></iframe>
+\t\t\t\t<iframe id=\"iframe\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
 \t\t\t</main>
 \t\t</article>
 \t</body>

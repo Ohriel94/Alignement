@@ -5,6 +5,9 @@ const contexte = canvas.getContext("2d");
 const thkSlider = document.getElementById("thkSlider");
 const alpSlider = document.getElementById("alpSlider");
 const denSlider = document.getElementById("denSlider");
+const thkValue = document.getElementById("thkValue");
+const alpValue = document.getElementById("alpValue");
+const denValue = document.getElementById("denValue");
 var couleurLignes = "";
 var unBoutonAEtePresse = false;
 
@@ -26,11 +29,14 @@ function DessinerCanvas() {
         case "vert":
             couleurLignes = "RGBA(37,156,41," + alpha + ")";
             break;
-        case "blanc":
-            couleurLignes = "RGB(255,255,255," + alpha + ")";
-            break;
         case "orange":
             couleurLignes = "RGBA(255,145,46," + alpha + ")";
+            break;
+        case "violet":
+            couleurLignes = "RGBA(133, 64, 255," + alpha + ")";
+            break;
+        case "blanc":
+            couleurLignes = "RGB(255,255,255," + alpha + ")";
             break;
     }
     console.log("couleur choisit : " + couleurChoisit);
@@ -76,6 +82,9 @@ function RecupererValeurs() {
     epaisseur = thkSlider.value;
     alpha = alpSlider.value;
     densite = denSlider.value;
+    thkValue.innerHTML = epaisseur;
+    alpValue.innerHTML = alpha/100;
+    denValue.innerHTML = densite;
 }
 
 function EffacerCanvas(contexte) {
@@ -90,3 +99,7 @@ alpSlider.onmouseup = function () {
 denSlider.onmouseup = function () {
     DessinerCanvas();
 }
+
+setInterval = (function(){
+    document.getElementById("iframe").setAttribute("src") = "https://10.0.0.45/ISAPI/Streaming/Channels/1/picture?admin@F0urnier"
+},2000)

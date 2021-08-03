@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-    color: #0D237D;
+    color: #b3112c;
     font-weight: bold;
 }
 
@@ -124,8 +124,11 @@ div.d-md-block {
 #btn-vert {
     background-color: #259c29;
 }
-#btn-jaune {
-    background-color: #c79e2e;
+#btn-orange {
+    background-color: #ffa600;
+}
+#btn-violet {
+    background-color: #8540ff;
 }
 #btn-blanc {
     background-color: #888888;

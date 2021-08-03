@@ -8,35 +8,38 @@
 {% block title %}Alignement
 {% endblock %}
 {% block body %}
-	<body>
+	<body onload="DessinerCanvas()">
 		<article class="row">
 			<aside class="side">
-				<h3>Controls</h3>
-				<label for="epaisseur">Épaisseur :
-					<span id="epaisseur" class="slider"></span>
-					<input type="range" id="epaisseur" name="epaisseur" min="1" max="50" value="25">
-				</label>
-				<label for="alpha">Transparance :
-					<span id="alpha" class="slider"></span>
-					<input type="range" id="alpha" name="alpha" min="1" max="100" value="50"></label>
-				<label for="densite">Écart :
-					<span id="densite" class="slider"></span>
-					<input type="range" id="densite" name="densite" min="1" max="150" value="75">
-				</label>
-				<div class="side">
-					<input type="button" id="btn-rouge" class="button" onclick="" value="rouge"><br>
-					<input type="button" id="btn-bleu" class="button" onclick="" value="bleu"><br>
-					<input type="button" id="btn-vert" class="button" onclick="" value="vert"><br>
-					<input type="button" id="btn-jaune" class="button" onclick="" value="jaune"><br>
-					<input type="button" id="btn-blanc" class="button" onclick="" value="blanc"><br>
+				<div class="slider-container">
+					<h2>Controls</h2>
+					<label for="epaisseur">Épaisseur:
+						<span id="thkValue">0</span>
+					</label>
+					<input type="range" id="thkSlider" min="5" max="25" value="10">
+					<label for="alpha">Alpha:
+						<span id="alpValue">0</span>
+					</label>
+					<input type="range" id="alpSlider" min="20" max="100" value="75">
+					<label for="densite">Densité:
+						<span id="denValue">0</span>
+					</label>
+					<input type="range" id="denSlider" min="3" max="20" value="10">
+				</div><br>
+				<div class="boutons-container">
+					<input type="button" id="btn-rouge" class="boutons" onclick="ChoisirCouleur(this)" value="rouge"><br>
+					<input type="button" id="btn-bleu" class="boutons" onclick="ChoisirCouleur(this)" value="bleu"><br>
+					<input type="button" id="btn-vert" class="boutons" onclick="ChoisirCouleur(this)" value="vert"><br>
+					<input type="button" id="btn-orange" class="boutons" onclick="ChoisirCouleur(this)" value="orange"><br>
+					<input type="button" id="btn-violet" class="boutons" onclick="ChoisirCouleur(this)" value="violet"><br>
+					<input type="button" id="btn-blanc" class="boutons" onclick="ChoisirCouleur(this)" value="blanc"><br>
 				</div>
 			</aside>
 			<main class="main">
-				<h3>View</h3>
-				<canvas id="canvas" width="2304" height="1296"></canvas>
-				<iframe id="iframe" title="retourCamera" width="2304" height="1296" src="10.0.1.20" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+				<h2>View</h2>
+				<canvas id="canvas" width="2690" height="1520"></canvas>
+				<iframe id="iframe" title="retourCamera" src="" scrolling="no" loading="eager"></iframe>
 			</main>
 		</article>
 	</body>
 {% endblock %}
-{# git commit -m "Code nettoyer, fonctionnelle mais inachevé" #}
