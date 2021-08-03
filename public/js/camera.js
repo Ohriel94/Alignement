@@ -48,11 +48,10 @@ function DessinerCanvas() {
         contexte.beginPath();
         contexte.lineCap = "flat";
         contexte.strokeStyle = couleurLignes;
-        contexte.moveTo(0 + (canvas.height / densite) * i, 0);
-        contexte.lineTo(0 + (canvas.height / densite) * i, canvas.height);
+        contexte.moveTo((canvas.height / densite) * i, 0);
+        contexte.lineTo((canvas.height / densite) * i, canvas.height);
         contexte.lineWidth = epaisseur;
         contexte.stroke();
-        console.log(i);
     }
     //Dessiner les lignes horizontales. S'ajuste en fonction des dimensions de l'écran par rapport a la densité
     //de lignes choisit
@@ -61,11 +60,10 @@ function DessinerCanvas() {
         contexte.beginPath();
         contexte.lineCap = "flat";
         contexte.strokeStyle = couleurLignes;
-        contexte.moveTo(0, 0 + (canvas.width / densite) * j);
-        contexte.lineTo(canvas.width, 0 + (canvas.width / densite) * j);
+        contexte.moveTo(0, (canvas.width / densite) * j);
+        contexte.lineTo(canvas.width, (canvas.width / densite) * j);
         contexte.lineWidth = epaisseur;
         contexte.stroke();
-        console.log(j);
     }
     contexte.globalCompositeOperation = "destination-atop";
     console.log("========================================================================================");
@@ -83,7 +81,7 @@ function RecupererValeurs() {
     alpha = alpSlider.value;
     densite = denSlider.value;
     thkValue.innerHTML = epaisseur;
-    alpValue.innerHTML = alpha/100;
+    alpValue.innerHTML = alpha / 100;
     denValue.innerHTML = densite;
 }
 
@@ -100,6 +98,8 @@ denSlider.onmouseup = function () {
     DessinerCanvas();
 }
 
-setInterval = (function(){
-    document.getElementById("iframe").setAttribute("src") = "https://10.0.0.45/ISAPI/Streaming/Channels/1/picture?admin@F0urnier"
-},2000)
+var x = setInterval(CamRefresh(), 1000)
+function CamRefresh() {
+    console.log("CamRefresh()")
+    document.getElementById("iframe").src = "https://10.0.0.45/ISAPI/Streaming/Channels/1/picture?admin@F0urnier";
+}

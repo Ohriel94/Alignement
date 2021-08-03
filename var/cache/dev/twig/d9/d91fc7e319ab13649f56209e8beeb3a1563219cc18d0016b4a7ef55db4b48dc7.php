@@ -141,7 +141,7 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t<main class=\"main\">
 \t\t\t\t<h2>View</h2>
 \t\t\t\t<canvas id=\"canvas\" width=\"2690\" height=\"1520\"></canvas>
-\t\t\t\t<iframe id=\"iframe\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
+\t\t\t\t<iframe id=\"iframe\" width=\"2690\" height=\"1520\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
 \t\t\t</main>
 \t\t</article>
 \t</body>
@@ -211,7 +211,7 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t<main class=\"main\">
 \t\t\t\t<h2>View</h2>
 \t\t\t\t<canvas id=\"canvas\" width=\"2690\" height=\"1520\"></canvas>
-\t\t\t\t<iframe id=\"iframe\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
+\t\t\t\t<iframe id=\"iframe\" width=\"2690\" height=\"1520\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
 \t\t\t</main>
 \t\t</article>
 \t</body>
