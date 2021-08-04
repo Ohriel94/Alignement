@@ -15,7 +15,7 @@ window.setInterval(
 function CamRefresh() {
     console.log("CamRefresh()");
     document.getElementById("iframe").src = "https://10.0.0.45/ISAPI/Streaming/Channels/1/picture?admin@F0urnier";
-}, 1000);
+}, 2000);
 
 function DessinerCanvas() {
     EffacerCanvas(contexte);
