@@ -710,6 +710,6 @@ class __TwigTemplate_4e6640e6790cb7810a3428eb5cf2df968e02befb65d56eba9d69485a22d
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\bbekoy\\Documents\\Symfony Projects\\Yggdrasil\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\bbekoy\\Documents\\Projects\\Symfony\\Alignement\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
     }
 }
