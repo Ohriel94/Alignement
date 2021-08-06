@@ -614,7 +614,7 @@ class __TwigTemplate_7b3375f07cd904f4c87b998bfd26ce29d9e073fa2a51a9580b52c60a91a
                                 {%- endif -%}
                             {%- endset %}
                             {% if menu is not empty %}
-                                <li class=\"{{ name }} {{ name == panel ? 'selected' : '' }}\">
+                                <li class=\"{{ name }} {{ name == panel ? 'selected' }}\">
                                     <a href=\"{{ path('_profiler', { token: token, panel: name }) }}\">{{ menu|raw }}</a>
                                 </li>
                             {% endif %}

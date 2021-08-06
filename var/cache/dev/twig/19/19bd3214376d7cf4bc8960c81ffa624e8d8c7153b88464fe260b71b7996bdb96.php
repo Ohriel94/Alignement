@@ -198,7 +198,7 @@ class __TwigTemplate_4e6640e6790cb7810a3428eb5cf2df968e02befb65d56eba9d69485a22d
         echo "
     <span class=\"label ";
         // line 67
-        echo ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 67, $this->source); })()), "messages", [], "any", false, false, false, 67))) ? ("") : ("disabled"));
+        echo ((twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["events"]) || array_key_exists("events", $context) ? $context["events"] : (function () { throw new RuntimeError('Variable "events" does not exist.', 67, $this->source); })()), "messages", [], "any", false, false, false, 67))) ? ("disabled") : (""));
         echo "\">
         <span class=\"icon\">";
         // line 68
@@ -577,7 +577,7 @@ class __TwigTemplate_4e6640e6790cb7810a3428eb5cf2df968e02befb65d56eba9d69485a22d
 {% block menu %}
     {% set events = collector.events %}
 
-    <span class=\"label {{ events.messages|length ? '' : 'disabled' }}\">
+    <span class=\"label {{ events.messages is empty ? 'disabled' }}\">
         <span class=\"icon\">{{ include('@WebProfiler/Icon/mailer.svg') }}</span>
 
         <strong>E-mails</strong>

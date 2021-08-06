@@ -41,7 +41,7 @@ class __TwigTemplate_f3cc42c57bd03c958f836858ef6b2989dfec22d59b1cc1ebe52d3a769bf
 
         // line 1
         echo ".container {
-    max-width: auto;
+    max-width: none;
     margin: 0;
     padding: 0;
 }
@@ -70,7 +70,7 @@ class __TwigTemplate_f3cc42c57bd03c958f836858ef6b2989dfec22d59b1cc1ebe52d3a769bf
 }
 
 .exception-message-wrapper .container {
-    min-height: auto;
+    min-height: unset;
 }
 ";
         
@@ -94,7 +94,7 @@ class __TwigTemplate_f3cc42c57bd03c958f836858ef6b2989dfec22d59b1cc1ebe52d3a769bf
     public function getSourceContext()
     {
         return new Source(".container {
-    max-width: auto;
+    max-width: none;
     margin: 0;
     padding: 0;
 }
@@ -123,7 +123,7 @@ class __TwigTemplate_f3cc42c57bd03c958f836858ef6b2989dfec22d59b1cc1ebe52d3a769bf
 }
 
 .exception-message-wrapper .container {
-    min-height: auto;
+    min-height: unset;
 }
 ", "@WebProfiler/Collector/exception.css.twig", "C:\\Users\\bbekoy\\Documents\\Projects\\Symfony\\Alignement\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.css.twig");
     }

@@ -278,7 +278,7 @@ class __TwigTemplate_164ce6d3908884f9e8e2c8925cc9137a5e15309bee694d31cc8ac2b7b1f
 {%- endblock button_row -%}
 
 {%- block hidden_row -%}
-    {%- set style = row_attr.style is defined ? (row_attr.style ~ (row_attr.style|trim|last != ';' ? '; ')) : '' -%}
+    {%- set style = row_attr.style is defined ? (row_attr.style ~ (row_attr.style|trim|last != ';' ? '; ')) -%}
     <tr{% with {attr: row_attr|merge({style: (style ~ ' display: none')|trim})} %}{{ block('attributes') }}{% endwith %}>
         <td colspan=\"2\">
             {{- form_widget(form) -}}

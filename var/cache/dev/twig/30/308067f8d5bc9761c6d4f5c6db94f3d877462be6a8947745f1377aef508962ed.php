@@ -125,9 +125,9 @@ class __TwigTemplate_3566657417ded26d6616dd33a0232b3e01fd690fcf1175ec138054613b6
         // line 10
         if ((isset($context["action_url"]) || array_key_exists("action_url", $context) ? $context["action_url"] : (function () { throw new RuntimeError('Variable "action_url" does not exist.', 10, $this->source); })())) {
             // line 11
-            echo (isset($context["action_url"]) || array_key_exists("action_url", $context) ? $context["action_url"] : (function () { throw new RuntimeError('Variable "action_url" does not exist.', 11, $this->source); })());
-            echo ": ";
             echo (isset($context["action_text"]) || array_key_exists("action_text", $context) ? $context["action_text"] : (function () { throw new RuntimeError('Variable "action_text" does not exist.', 11, $this->source); })());
+            echo ": ";
+            echo (isset($context["action_url"]) || array_key_exists("action_url", $context) ? $context["action_url"] : (function () { throw new RuntimeError('Variable "action_url" does not exist.', 11, $this->source); })());
             echo "
 ";
         }
@@ -189,7 +189,7 @@ class __TwigTemplate_3566657417ded26d6616dd33a0232b3e01fd690fcf1175ec138054613b6
 
 {% block action %}
 {% if action_url %}
-{{ action_url }}: {{ action_text }}
+{{ action_text }}: {{ action_url }}
 {% endif %}
 {% endblock %}
 

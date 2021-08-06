@@ -2408,14 +2408,6 @@
         <argument>1024</argument>
       </call>
       <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="security.listener.main.user_provider"/>
-          <argument>checkPassport</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.context_listener.0"/>
@@ -3138,7 +3130,7 @@
       </argument>
     </service>
     <service id="serializer.mapping.class_discriminator_resolver" class="Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata">
-      <argument type="service" id="serializer.mapping.cache_class_metadata_factory"/>
+      <argument type="service" id="serializer.mapping.class_metadata_factory"/>
     </service>
     <service id="serializer.normalizer.constraint_violation_list" class="Symfony\Component\Serializer\Normalizer\ConstraintViolationListNormalizer">
       <tag name="serializer.normalizer" priority="-915"/>
@@ -3181,7 +3173,7 @@
     </service>
     <service id="serializer.normalizer.object" class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer">
       <tag name="serializer.normalizer" priority="-1000"/>
-      <argument type="service" id="serializer.mapping.cache_class_metadata_factory"/>
+      <argument type="service" id="serializer.mapping.class_metadata_factory"/>
       <argument type="service" id="serializer.name_converter.metadata_aware"/>
       <argument type="service" id="property_accessor"/>
       <argument type="service" id="property_info" on-invalid="ignore"/>
@@ -3190,7 +3182,7 @@
       <argument type="collection"/>
     </service>
     <service id="serializer.normalizer.property" class="Symfony\Component\Serializer\Normalizer\PropertyNormalizer">
-      <argument type="service" id="serializer.mapping.cache_class_metadata_factory"/>
+      <argument type="service" id="serializer.mapping.class_metadata_factory"/>
       <argument type="service" id="serializer.name_converter.metadata_aware"/>
       <argument type="service" id="property_info" on-invalid="ignore"/>
       <argument type="service" id="serializer.mapping.class_discriminator_resolver" on-invalid="ignore"/>
@@ -3209,6 +3201,9 @@
         </argument>
       </argument>
     </service>
+    <service id="serializer.mapping.class_metadata_factory" class="Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory">
+      <argument type="service" id="serializer.mapping.chain_loader"/>
+    </service>
     <service id="serializer.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\SerializerCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="collection">
@@ -3225,10 +3220,6 @@
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
-    <service id="serializer.mapping.cache_class_metadata_factory" class="Symfony\Component\Serializer\Mapping\Factory\CacheClassMetadataFactory">
-      <argument type="service" id="serializer.mapping.cache_class_metadata_factory.inner"/>
-      <argument type="service" id="serializer.mapping.cache.symfony"/>
-    </service>
     <service id="serializer.encoder.xml" class="Symfony\Component\Serializer\Encoder\XmlEncoder">
       <tag name="serializer.encoder"/>
     </service>
@@ -3243,11 +3234,11 @@
     </service>
     <service id="serializer.name_converter.camel_case_to_snake_case" class="Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter"/>
     <service id="serializer.name_converter.metadata_aware" class="Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter">
-      <argument type="service" id="serializer.mapping.cache_class_metadata_factory"/>
+      <argument type="service" id="serializer.mapping.class_metadata_factory"/>
     </service>
     <service id="property_info.serializer_extractor" class="Symfony\Component\PropertyInfo\Extractor\SerializerExtractor">
       <tag name="property_info.list_extractor" priority="-999"/>
-      <argument type="service" id="serializer.mapping.cache_class_metadata_factory"/>
+      <argument type="service" id="serializer.mapping.class_metadata_factory"/>
     </service>
     <service id="error_handler.error_renderer.serializer" class="Symfony\Component\ErrorHandler\ErrorRenderer\SerializerErrorRenderer">
       <argument type="service" id="serializer"/>
@@ -3621,7 +3612,7 @@
       <argument type="service" id="twig"/>
       <argument type="service" id="error_handler.error_renderer.html"/>
       <argument type="service">
-        <service class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
+        <service class="bool">
           <argument type="service" id="request_stack"/>
           <argument>true</argument>
           <factory class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer" method="isDebug"/>
@@ -4575,11 +4566,19 @@
       <argument>null</argument>
     </service>
     <service id="security.listener.main.user_provider" class="Symfony\Component\Security\Http\EventListener\UserProviderListener">
-      <tag name="kernel.event_listener" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="2048" method="checkPassport"/>
+      <tag name="kernel.event_listener" dispatcher="security.event_dispatcher.main" event="Symfony\Component\Security\Http\Event\CheckPassportEvent" priority="2048" method="checkPassport"/>
       <argument type="service" id="security.user.provider.concrete.users_in_memory"/>
     </service>
     <service id="security.event_dispatcher.main" class="Symfony\Component\EventDispatcher\EventDispatcher">
       <tag name="security.event_dispatcher.main">event_dispatcher.dispatcher</tag>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="security.listener.main.user_provider"/>
+          <argument>checkPassport</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\LoginSuccessEvent</argument>
         <argument type="collection">
@@ -4611,14 +4610,6 @@
           <argument>checkPassport</argument>
         </argument>
         <argument>1024</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="security.listener.main.user_provider"/>
-          <argument>checkPassport</argument>
-        </argument>
-        <argument>2048</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -5444,9 +5435,6 @@
         <argument type="service" id="debug.argument_resolver.not_tagged_controller"/>
       </argument>
     </service>
-    <service id="serializer.mapping.cache_class_metadata_factory.inner" class="Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory">
-      <argument type="service" id="serializer.mapping.chain_loader"/>
-    </service>
     <service id="var_dumper.contextualized_cli_dumper.inner" class="Symfony\Component\VarDumper\Dumper\CliDumper">
       <argument>null</argument>
       <argument>UTF-8</argument>
@@ -6246,7 +6234,7 @@
     <service id="Symfony\Component\Serializer\Mapping\ClassDiscriminatorResolverInterface" alias="serializer.mapping.class_discriminator_resolver"/>
     <service id="Symfony\Component\Serializer\Normalizer\ObjectNormalizer" alias="serializer.normalizer.object"/>
     <service id="Symfony\Component\Serializer\Normalizer\PropertyNormalizer" alias="serializer.normalizer.property"/>
-    <service id="Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactoryInterface" alias="serializer.mapping.cache_class_metadata_factory"/>
+    <service id="Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactoryInterface" alias="serializer.mapping.class_metadata_factory"/>
     <service id="error_renderer.serializer" alias="error_handler.error_renderer.serializer"/>
     <service id="Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface" alias="property_info"/>
     <service id="Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface" alias="property_info"/>
@@ -6322,7 +6310,6 @@
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
     <service id="argument_resolver" alias="debug.argument_resolver"/>
-    <service id="serializer.mapping.class_metadata_factory" alias="serializer.mapping.cache_class_metadata_factory"/>
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="var_dumper.cli_dumper" alias="var_dumper.contextualized_cli_dumper"/>
     <service id="security.access.decision_manager" alias="debug.security.access.decision_manager"/>

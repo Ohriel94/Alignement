@@ -536,7 +536,7 @@ class __TwigTemplate_b9367c64146524d309d9c855d33712b57244eb234861bf24af0e25351b9
         // line 127
         $this->displayBlock("form_widget_simple", $context, $blocks);
         // line 128
-        $context["label_attr"] = twig_array_merge((isset($context["label_attr"]) || array_key_exists("label_attr", $context) ? $context["label_attr"] : (function () { throw new RuntimeError('Variable "label_attr" does not exist.', 128, $this->source); })()), ["class" => twig_trim_filter((((twig_get_attribute($this->env, $this->source, ($context["label_attr"] ?? null), "class", [], "any", true, true, false, 128)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["label_attr"] ?? null), "class", [], "any", false, false, false, 128), "")) : ("")) . " custom-file-label"))]);
+        $context["label_attr"] = twig_array_filter($this->env, twig_array_merge((isset($context["label_attr"]) || array_key_exists("label_attr", $context) ? $context["label_attr"] : (function () { throw new RuntimeError('Variable "label_attr" does not exist.', 128, $this->source); })()), ["class" => twig_trim_filter((((twig_get_attribute($this->env, $this->source, ($context["label_attr"] ?? null), "class", [], "any", true, true, false, 128)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["label_attr"] ?? null), "class", [], "any", false, false, false, 128), "")) : ("")) . " custom-file-label"))]), function ($__value__, $__key__) use ($context, $macros) { $context["value"] = $__value__; $context["key"] = $__key__; return (0 !== twig_compare((isset($context["key"]) || array_key_exists("key", $context) ? $context["key"] : (function () { throw new RuntimeError('Variable "key" does not exist.', 128, $this->source); })()), "id")); });
         // line 129
         echo "<label for=\"";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 129, $this->source); })()), "vars", [], "any", false, false, false, 129), "id", [], "any", false, false, false, 129), "html", null, true);
@@ -1365,7 +1365,7 @@ array_key_exists("type", $context)) ? (_twig_default_filter((isset($context["typ
         {% if app is defined and app.request is defined %}{%- set input_lang = app.request.locale -%}{%- endif -%}
         {%- set attr = {lang: input_lang} | merge(attr) -%}
         {{- block('form_widget_simple') -}}
-        {%- set label_attr = label_attr|merge({ class: (label_attr.class|default('') ~ ' custom-file-label')|trim }) -%}
+        {%- set label_attr = label_attr|merge({ class: (label_attr.class|default('') ~ ' custom-file-label')|trim })|filter((value, key) => key != 'id') -%}
         <label for=\"{{ form.vars.id }}\" {% with { attr: label_attr } %}{{ block('attributes') }}{% endwith %}>
             {%- if attr.placeholder is defined and attr.placeholder is not none -%}
                 {{- translation_domain is same as(false) ? attr.placeholder : attr.placeholder|trans({}, translation_domain) -}}

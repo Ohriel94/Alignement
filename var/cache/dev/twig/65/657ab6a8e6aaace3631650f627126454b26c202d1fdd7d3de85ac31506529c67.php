@@ -609,9 +609,9 @@ class __TwigTemplate_3e3aee6ee11cb8f9f4cb3cc80a137496b8ba7c18e4a75519564cba12e8a
             foreach ($context['_seq'] as $context["_key"] => $context["log"]) {
                 // line 204
                 echo "                ";
-                $context["css_class"] = (((isset($context["is_deprecation"]) || array_key_exists("is_deprecation", $context) ? $context["is_deprecation"] : (function () { throw new RuntimeError('Variable "is_deprecation" does not exist.', 204, $this->source); })())) ? ("") : (((twig_in_filter(twig_get_attribute($this->env, $this->source,                 // line 205
+                $context["css_class"] = (( !(isset($context["is_deprecation"]) || array_key_exists("is_deprecation", $context) ? $context["is_deprecation"] : (function () { throw new RuntimeError('Variable "is_deprecation" does not exist.', 204, $this->source); })())) ? (((twig_in_filter(twig_get_attribute($this->env, $this->source,                 // line 205
 $context["log"], "priorityName", [], "any", false, false, false, 205), [0 => "CRITICAL", 1 => "ERROR", 2 => "ALERT", 3 => "EMERGENCY"])) ? ("status-error") : ((((0 === twig_compare(twig_get_attribute($this->env, $this->source,                 // line 206
-$context["log"], "priorityName", [], "any", false, false, false, 206), "WARNING"))) ? ("status-warning") : (""))))));
+$context["log"], "priorityName", [], "any", false, false, false, 206), "WARNING"))) ? ("status-warning") : (""))))) : (""));
                 // line 208
                 echo "                <tr class=\"";
                 echo twig_escape_filter($this->env, (isset($context["css_class"]) || array_key_exists("css_class", $context) ? $context["css_class"] : (function () { throw new RuntimeError('Variable "css_class" does not exist.', 208, $this->source); })()), "html", null, true);
@@ -623,7 +623,7 @@ $context["log"], "priorityName", [], "any", false, false, false, 206), "WARNING"
                 }
                 if ((isset($context["channel_is_defined"]) || array_key_exists("channel_is_defined", $context) ? $context["channel_is_defined"] : (function () { throw new RuntimeError('Variable "channel_is_defined" does not exist.', 208, $this->source); })())) {
                     echo " data-filter-channel=\"";
-                    (( !(null === twig_get_attribute($this->env, $this->source, $context["log"], "channel", [], "any", false, false, false, 208))) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["log"], "channel", [], "any", false, false, false, 208), "html", null, true))) : (print ("")));
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["log"], "channel", [], "any", false, false, false, 208), "html", null, true);
                     echo "\"";
                 }
                 echo ">
@@ -1039,11 +1039,11 @@ $context["log"], "priorityName", [], "any", false, false, false, 206), "WARNING"
 
         <tbody>
             {% for log in logs %}
-                {% set css_class = is_deprecation ? ''
-                    : log.priorityName in ['CRITICAL', 'ERROR', 'ALERT', 'EMERGENCY'] ? 'status-error'
+                {% set css_class = not is_deprecation
+                    ? log.priorityName in ['CRITICAL', 'ERROR', 'ALERT', 'EMERGENCY'] ? 'status-error'
                     : log.priorityName == 'WARNING' ? 'status-warning'
                 %}
-                <tr class=\"{{ css_class }}\"{% if show_level %} data-filter-level=\"{{ log.priorityName|lower }}\"{% endif %}{% if channel_is_defined %} data-filter-channel=\"{{ log.channel is not null ? log.channel : '' }}\"{% endif %}>
+                <tr class=\"{{ css_class }}\"{% if show_level %} data-filter-level=\"{{ log.priorityName|lower }}\"{% endif %}{% if channel_is_defined %} data-filter-channel=\"{{ log.channel }}\"{% endif %}>
                     <td class=\"font-normal text-small\" nowrap>
                         {% if show_level %}
                             <span class=\"colored text-bold\">{{ log.priorityName }}</span>
