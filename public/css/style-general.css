@@ -39,7 +39,6 @@ ul {
 
 footer {
     position: relative;
-    top: 650px;
     display: block
 }
 
@@ -84,14 +83,14 @@ div.d-md-block {
 .main {
     min-height: 2304px;
     min-width: fit-content;
-    padding: 40px;
+    margin: 20px;
 }
 
 .side {
-    max-width: 450px;
+    max-width: 500px;
     min-width: fit-content;
     text-align: center;
-    padding: 40px;
+    margin: 20px;
 }
 
 .canvas {

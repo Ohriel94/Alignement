@@ -1,11 +1,12 @@
 #iframe {
     position: relative;
     z-index: 98;
-    border: #b3112c 5px;
+    border: #b3112c 5px solid;
+    width:"1920";
+    height:"1080";
 }
 
 #canvas {
     position: absolute;
     z-index: 99;
 }
-

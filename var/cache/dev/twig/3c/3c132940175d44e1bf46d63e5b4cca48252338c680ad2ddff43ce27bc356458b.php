@@ -74,14 +74,12 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
         echo "    ";
         $this->displayBlock('body', $context, $blocks);
         // line 32
-        echo "    </main>
-    ";
-        // line 33
+        echo "    ";
         $this->displayBlock('footer', $context, $blocks);
-        // line 44
+        // line 43
         echo "    ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 54
+        // line 53
         echo "</html>
 ";
         
@@ -204,7 +202,7 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
 
     }
 
-    // line 33
+    // line 32
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -214,7 +212,7 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 34
+        // line 33
         echo "    <footer class=\"jumbotron bg-white text-center\">
         <p><br/>
             <a href=\"https://www.fournierindustries.com/\"
@@ -233,7 +231,7 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
 
     }
 
-    // line 44
+    // line 43
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -243,7 +241,7 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 45
+        // line 44
         echo "        <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"
             integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\"
             crossorigin=\"anonymous\"></script>
@@ -268,7 +266,7 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
 
     public function getDebugInfo()
     {
-        return array (  247 => 45,  237 => 44,  218 => 34,  208 => 33,  197 => 30,  187 => 29,  174 => 25,  164 => 24,  146 => 14,  136 => 13,  124 => 9,  114 => 8,  96 => 5,  85 => 54,  82 => 44,  80 => 33,  77 => 32,  74 => 29,  72 => 24,  69 => 23,  67 => 13,  64 => 12,  62 => 8,  56 => 5,  50 => 1,);
+        return array (  245 => 44,  235 => 43,  216 => 33,  206 => 32,  195 => 30,  185 => 29,  172 => 25,  162 => 24,  144 => 14,  134 => 13,  122 => 9,  112 => 8,  94 => 5,  83 => 53,  80 => 43,  77 => 32,  74 => 29,  72 => 24,  69 => 23,  67 => 13,  64 => 12,  62 => 8,  56 => 5,  50 => 1,);
     }
 
     public function getSourceContext()
@@ -304,7 +302,6 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
     {% block body %}
     
     {% endblock %}
-    </main>
     {% block footer %}
     <footer class=\"jumbotron bg-white text-center\">
         <p><br/>
@@ -327,6 +324,6 @@ class __TwigTemplate_4ba3390eb6634048cfa481a8a0b220d3ec2c39465b11cd2d895aac7cd9e
             crossorigin=\"anonymous\"></script>
     {% endblock %}
 </html>
-", "base.html.twig", "C:\\Users\\bbekoy\\Documents\\Projects\\Symfony\\Alignement\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\bbekoy\\Documents\\Projects\\Symfony\\Align\\Alignement\\templates\\base.html.twig");
     }
 }

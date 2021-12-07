@@ -116,6 +116,9 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t<aside class=\"side\">
 \t\t\t\t<div class=\"slider-container\">
 \t\t\t\t\t<h2>Controls</h2>
+\t\t\t\t\t\t<input type=\"checkbox\" id=\"chkRefresh\" checked=\"checked\">
+\t\t\t\t\t\t<label for=\"slow\">Activer Rafraichissement </label>
+\t\t\t\t\t<hr>
 \t\t\t\t\t<label for=\"epaisseur\">Épaisseur:
 \t\t\t\t\t\t<span id=\"thkValue\">0</span>
 \t\t\t\t\t</label>
@@ -140,8 +143,8 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t</aside>
 \t\t\t<main class=\"main\">
 \t\t\t\t<h2>View</h2>
-\t\t\t\t<canvas id=\"canvas\" width=\"2690\" height=\"1520\"></canvas>
-\t\t\t\t<iframe id=\"iframe\" width=\"2690\" height=\"1520\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
+\t\t\t\t<canvas id=\"canvas\"></canvas>
+\t\t\t\t<iframe id=\"iframe\" width=\"1920\" height=\"1080\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
 \t\t\t</main>
 \t\t</article>
 \t</body>
@@ -186,6 +189,9 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t<aside class=\"side\">
 \t\t\t\t<div class=\"slider-container\">
 \t\t\t\t\t<h2>Controls</h2>
+\t\t\t\t\t\t<input type=\"checkbox\" id=\"chkRefresh\" checked=\"checked\">
+\t\t\t\t\t\t<label for=\"slow\">Activer Rafraichissement </label>
+\t\t\t\t\t<hr>
 \t\t\t\t\t<label for=\"epaisseur\">Épaisseur:
 \t\t\t\t\t\t<span id=\"thkValue\">0</span>
 \t\t\t\t\t</label>
@@ -210,12 +216,12 @@ class __TwigTemplate_127e31938347c3e674f33ad64a8e26c4fdfc0e0b70a85da576d3d921c4b
 \t\t\t</aside>
 \t\t\t<main class=\"main\">
 \t\t\t\t<h2>View</h2>
-\t\t\t\t<canvas id=\"canvas\" width=\"2690\" height=\"1520\"></canvas>
-\t\t\t\t<iframe id=\"iframe\" width=\"2690\" height=\"1520\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
+\t\t\t\t<canvas id=\"canvas\"></canvas>
+\t\t\t\t<iframe id=\"iframe\" width=\"1920\" height=\"1080\" title=\"retourCamera\" src=\"\" scrolling=\"no\" loading=\"eager\"></iframe>
 \t\t\t</main>
 \t\t</article>
 \t</body>
 {% endblock %}
-", "pages/page01.html.twig", "C:\\Users\\bbekoy\\Documents\\Projects\\Symfony\\Alignement\\templates\\pages\\page01.html.twig");
+", "pages/page01.html.twig", "C:\\Users\\bbekoy\\Documents\\Projects\\Symfony\\Align\\Alignement\\templates\\pages\\page01.html.twig");
     }
 }
